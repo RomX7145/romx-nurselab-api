@@ -1,3 +1,52 @@
-.env
+# Byte-compiled / cache
 __pycache__/
-*.pyc
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Environment variables
+.env
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# FastAPI/Uvicorn logs
+*.log
+
+# VS Code / IDE settings
+.vscode/
+.idea/
+
+# Node.js frontend (if using React/Vite/etc.)
+node_modules/
+dist/
+build/
+
+# PyInstaller
+*.spec
+
+# Test & coverage reports
+htmlcov/
+.coverage
+coverage.xml
+.pytest_cache/
+
+# Render deploy ignore (optional if you're not using it)
+render.yaml
+
+# Static assets
+static/*.map
+
+# Optional: frontend build artifacts
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Optional: Python notebooks
+*.ipynb_checkpoints/
