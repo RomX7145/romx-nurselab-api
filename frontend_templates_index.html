@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medical AI Assistant</title>
+  <link href="/static/styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-900 flex flex-col items-center justify-start min-h-screen p-6">
+  <div class="w-full max-w-lg bg-white p-6 rounded-2xl shadow-md">
+    <h1 class="text-2xl font-bold mb-4 text-center">🧠 Medical AI Assistant</h1>
+
+    <form action="/ask" method="post" class="space-y-4">
+      <textarea name="question" rows="4" required placeholder="Ask a medical question..." class="w-full p-3 border rounded-lg resize-none"></textarea>
+      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Ask</button>
+    </form>
+
+    {% if question %}
+    <div class="mt-6 p-4 bg-green-100 border-l-4 border-green-500">
+      <p class="font-medium">Question:</p>
+      <p>{{ question }}</p>
+      <p class="font-medium mt-2">Answer:</p>
+      <p>{{ answer }}</p>
+    </div>
+    {% endif %}
+
+    <hr class="my-6">
+
+    <form action="/upload" method="post" enctype="multipart/form-data" class="space-y-4">
+      <label class="block">
+        <span class="sr-only">Choose PDF</span>
+        <input type="file" name="file" accept=".pdf" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100" required>
+      </label>
+      <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">Upload PDF</button>
+    </form>
+  </div>
+</body>
+</html>
